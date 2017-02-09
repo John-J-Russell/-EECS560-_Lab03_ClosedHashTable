@@ -55,13 +55,25 @@ class ClosedHashtable
 	*/
 	bool find(int value_to_find);
 
+	/*
+		@PRE:	
+		@POST:	
+		@RETURN:
+	*/
+	int hash(int value_to_hash);
 
-	int hash(value_to_hash);
-
-
+	/*
+		@PRE:	
+		@POST:	
+		@RETURN:
+	*/
 	int quadraticHash(int value_to_hash, int iteration_number);
 
-
+	/*
+		@PRE:	
+		@POST:	
+		@RETURN:
+	*/
 	int doubleHash(int value_to_hash, int iteration_number);
 
 
@@ -71,7 +83,7 @@ class ClosedHashtable
 	
 	int* m_closed_hashtable;
 
-	int m_size
+	int m_size;
 
 	//"true" means this will be a quadratic probing,
 	//"false" means will use double hashing

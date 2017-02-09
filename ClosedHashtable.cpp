@@ -8,7 +8,7 @@
 #include "ClosedHashtable.h"
 
 
-void ClosedHashtable::ClosedHashtable(int table_size, bool use_quadratic_probing)
+ClosedHashtable::ClosedHashtable(int table_size, bool use_quadratic_probing)
 {
 	m_bool_array = new bool[table_size];
 
@@ -18,10 +18,10 @@ void ClosedHashtable::ClosedHashtable(int table_size, bool use_quadratic_probing
 	//"False" means using double hashing.
 	m_use_quadratic_probing = use_quadratic_probing;
 
-	for(int x=0; x < table_size; x++
+	for(int x=0; x < table_size; x++)
 	{
 		m_bool_array[x] = false;
-		m_closed_hashtable = -1;
+		m_closed_hashtable[x] = -1;
 	}
 
 	m_size = table_size;
@@ -29,7 +29,7 @@ void ClosedHashtable::ClosedHashtable(int table_size, bool use_quadratic_probing
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-void ClosedHashtable::~ClosedHashtable()
+ClosedHashtable::~ClosedHashtable()
 {
 	delete(m_bool_array);
 	delete(m_closed_hashtable);
@@ -86,7 +86,7 @@ void ClosedHashtable::insert(int value_to_insert)
 
 void ClosedHashtable::remove(int value_to_remove)
 {
-	if( !find(value_to_insert) )
+	if( !find(value_to_remove) )
 	{
 		std::cout<<"Value not in table.\n";
 		return;
@@ -210,7 +210,7 @@ bool ClosedHashtable::find(int value_to_find)
 		}
 	
 	}
-
+	return(false);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////
 int ClosedHashtable::hash(int value_to_hash)
