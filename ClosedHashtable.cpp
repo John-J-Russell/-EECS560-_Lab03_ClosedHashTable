@@ -108,7 +108,7 @@ void ClosedHashtable::remove(int value_to_remove)
 				std::cout<<"Value removed. \n\n";
 				return;
 			}
-			else if(m_closed_hashtable[table_key] == -1 && m_bool_array[x] == false)
+			else if(m_closed_hashtable[table_key] == -1 && m_bool_array[table_key] == false)
 			{ //value not in table, though I don't think this should ever prompt?
 				std::cout<<"Value not in table [in removal function] \n\n";
 				return;
@@ -134,7 +134,7 @@ void ClosedHashtable::remove(int value_to_remove)
 				std::cout<<"Value removed. \n\n";
 				return;
 			}
-			else if(m_closed_hashtable[table_key] == -1 && m_bool_array[x] == false)
+			else if(m_closed_hashtable[table_key] == -1 && m_bool_array[table_key] == false)
 			{ //value not in table, though I don't think this should ever prompt?
 				std::cout<<"Value not in table [in removal function] \n\n";
 				return;
@@ -175,12 +175,12 @@ bool ClosedHashtable::find(int value_to_find)
 		{
 			table_key = quadraticHash(value_to_find, x);
 
-			if(value_to_find == m_closed_hashtable[x])
+			if(value_to_find == m_closed_hashtable[table_key])
 			{
 				return(true);
 			}
 			//else if entry is empty, and has never been emptied
-			else if(m_closed_hashtable[x] == -1 && m_bool_array[x] == false)
+			else if(m_closed_hashtable[table_key] == -1 && m_bool_array[table_key] == false)
 			{
 				return(false);
 			}
@@ -197,12 +197,12 @@ bool ClosedHashtable::find(int value_to_find)
 		{
 			table_key = doubleHash(value_to_find, x);
 
-			if(value_to_find == m_closed_hashtable[x])
+			if(value_to_find == m_closed_hashtable[table_key])
 			{
 				return(true);
 			}
 			//else if entry is empty, and has never been emptied
-			else if(m_closed_hashtable[x] == -1 && m_bool_array[x] == false)
+			else if(m_closed_hashtable[table_key] == -1 && m_bool_array[table_key] == false)
 			{
 				return(false);
 			}
