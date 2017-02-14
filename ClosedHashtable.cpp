@@ -1,8 +1,8 @@
 /*
-	@NAME:		
-	@DATE:		
-	@FILE:		
-	@PURPOSE:	
+	@NAME:		John Russell, 2798357
+	@DATE:		14 February 2017
+	@FILE:		ClosedHashtable.cpp
+	@PURPOSE:	definitions for closed hashtable class
 */
 
 #include "ClosedHashtable.h"

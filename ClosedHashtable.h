@@ -1,8 +1,8 @@
 /*
-	@NAME:		
-	@DATE:		
-	@FILE:		
-	@PURPOSE:	
+	@NAME:		John Russell, 2798357
+	@DATE:		14 February 2017
+	@FILE:		ClosedHashtable.h
+	@PURPOSE:	header file for closed hashtable class
 */
 
 #ifndef CLOSED_HASHTABLE_H
@@ -14,65 +14,67 @@ class ClosedHashtable
 {
 	public:
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	is passed proper values
+		@POST:	creates a closed hashtable of size table_size, and
+			either uses quadradic probing or double hashing.
+		@RETURN:none
 	*/
 	ClosedHashtable(int table_size, bool use_quadratic_probing);
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	none
+		@POST:	destroys the hashtable
+		@RETURN:none
 	*/
 	~ClosedHashtable();
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	is passed an integer, table was made properly
+		@POST:	value put into array if possible. Note: if table is overfull,
+			then there is a chance of failure.
+		@RETURN:none
 	*/
 	void insert(int value_to_insert);
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	is passed an integer, table made properly.
+		@POST:	If value is present in table, then it is removed
+		@RETURN:none
 	*/
 	void remove(int value_to_remove);
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	none
+		@POST:	contents of table printed to terminal
+		@RETURN:none
 	*/
 	void print();
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	is passed integer, table was made properly
+		@POST:	none
+		@RETURN:"true" if value in table, "false" otherwise.
 	*/
 	bool find(int value_to_find);
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	passed int, table made.
+		@POST:	none
+		@RETURN:the basic hash (value % m_size)
 	*/
 	int hash(int value_to_hash);
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	passed int, table made
+		@POST:	none
+		@RETURN:returned the quadratic hash for given inputs
 	*/
 	int quadraticHash(int value_to_hash, int iteration_number);
 
 	/*
-		@PRE:	
-		@POST:	
-		@RETURN:
+		@PRE:	passed it, table made
+		@POST:	none
+		@RETURN:returned the double hash for the given inputs
 	*/
 	int doubleHash(int value_to_hash, int iteration_number);
 
